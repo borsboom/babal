@@ -1,0 +1,19 @@
+2003.02.19
+- Re-organised JGLBabalCanvas to better handle resizing
+- Pause
+- Properly handle time when game not running (e.g. minimized window or applet
+  stopped)
+- Fixed: If leftmost column is filled, you can move past the left the space of
+  one column
+- On startup, choose correct initial position rather than defaulting to centre
+  (and immediately crashing if the centre is not filled)
+- If crash lands on empty row, move forward until non-empty row is found.
+- Ball rotation wraps around so it is always in [0,360).
+- Basic joystick support in the pyopengl version.  No analog controls.
+- When calling v_zero_cb in MotionPhysics, calculate time at which velocity was
+  actually zero and call it with MotionPhysics in the state it would have been
+  at that time.  This prevents the ball shooting off in the opposite direction
+  when you decelerate it and the game is running at a low framerate.
+
+2003.02.14 
+- Initial Release
