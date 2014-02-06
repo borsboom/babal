@@ -38,9 +38,6 @@
 <p>Note: you must have Java and JavaScript enabled to play this game in your browser.</p>
 
 <script type="text/javascript">
-<!--//--><![CDATA[// ><!--
-
-
   s = '' + window.location
   i = s.lastIndexOf('?map=')
   if (i == -1) {
@@ -49,20 +46,27 @@
     map = s.substr(i + 5)
   }
   //document.write('map=' + map)
-  document.write('<applet code="JGLBabalApplet.class" width="320" height="240" archive="http://s3.amazonaws.com/borsboom-downloads/babal/babal_applet.jar"><param name="map" value="http://s3.amazonaws.com/borsboom-downloads/babal/data/' + map + '.map" /><' + '/applet>')
-
-
-//--><!]]>
-</script><applet code="JGLBabalApplet.class" archive="http://s3.amazonaws.com/borsboom-downloads/babal/babal_applet.jar" height="240" width="320"><param name="map" value="http://s3.amazonaws.com/borsboom-downloads/babal/data/default.map"></applet></p>
+  document.write('<applet code="JGLBabalApplet.class" width="320" height="240" archive="/downloads/babal/babal_applet.jar"><param name="map" value="/downloads/babal/data/' + map + '.map" /><' + '/applet>')
+</script>
+</p>
 <form action="babal" method="get">
 <p>
 Map: 
-<select name="map" onchange="document.forms[1].submit()"><option value="default">---Choose---</option><option value="default">Default</option><option value="backward">Backward</option><option value="brush">Brush</option><option value="frank">Frank</option><option value="holes">Holes</option><option value="jump">Jump</option><option value="maze">Maze</option><option value="speed">Speed</option></select><input value="Select" type="submit"></p>
+<select name="map" onchange="document.forms[1].submit()">
+<option value="default">---Choose---</option>
+<option value="default">Default</option>
+<option value="backward">Backward</option>
+<option value="brush">Brush</option>
+<option value="frank">Frank</option>
+<option value="holes">Holes</option>
+<option value="jump">Jump</option>
+<option value="maze">Maze</option>
+<option value="speed">Speed</option>
+</select>
+<input type="submit" value="Select">
+</p>
 </form>
-<script type="text/javascript">
-<!--//--><![CDATA[// ><!--
-//<![CDATA[
-
+<script type="text/javascript">//<![CDATA[
   sel = document.forms[0].map
   j = 0
   for (i = 0; i < sel.options.length; i++) {
@@ -71,10 +75,7 @@ Map:
     }
   }
   document.forms[0].map.selectedIndex = j
-
-//]]]]><![CDATA[>
-//--><!]]>
-</script>
+//]]></script>
 
 <p>Goal: Don't fall into the holes!<br>
 Keys: </p>
